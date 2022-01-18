@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <!-- <link rel="stylesheet" href="normalize.css"> -->
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Tip calculator app</title>
+</head>
+<body>
+
+  <main>
+
+    <div class="header">
+      <!-- <h1>Tip Calculator</h1> -->
+      <img src="images/logo.svg" alt="">
+    </div>
+
+    <!-- <div class="calc"> -->
+      <form class="form" action="index.html" method="post">
+        <fieldset>
+          <div class="form__input">
+            <label for="bill">Bill</label>
+            <input id="bill" class="bill" type="number">
+          </div>
+
+          <div class="form__input">
+            <label for="tip">Select Tip %</label>
+            <div class="form__container">
+              <button type="button" class="btn">5%</button>
+              <button type="button" class="btn">10%</button>
+              <button type="button" class="btn">15%</button>
+              <button type="button" class="btn">25%</button>
+              <button type="button" class="btn">50%</button>
+              <div class="btn-custom">
+                <input id="tip" class="tip-input" type="number" placeholder="Custom">
+              </div>
+            </div>
+          </div>
+
+
+          <div class="form__input">
+            <label for="people">Number of People</label>
+            <input id="people" class="input" type="number" name="people">
+          </div>
+
+            <!-- <img src="images/icon-person.svg" alt=""> -->
+
+        </fieldset>
+
+        <div class="form__output">
+          <div class="outputs">
+            <div class="form__textBox">
+              <div class="text">
+                <p class="t1">Tip Amount</p>
+                <p class="t2">/ person</p>
+              </div>
+              <span id="display-tip"></span>
+            </div>
+            <div class="form__textBox">
+              <div class="text">
+                <p class="t1">Total</p>
+                <p class="t2">/ person</p>
+              </div>
+              <span id="display-total"></span>
+            </div>
+            </div>
+            <button id="reset" type="reset" class="btn__reset">RESET</button>
+
+          </div>
+
+
+
+
+      </form>
+    <!-- </div> -->
+
+
+  </main>
+
+<script src="app.js"></script>
+</body>
+</html>
