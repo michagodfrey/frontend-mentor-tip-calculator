@@ -1,24 +1,33 @@
-const calculate = document.getElementById("reset");
+document.getElementById("form").onchange = function() {
+  let bill = Number(document.getElementById("bill").value);
+  let people = Number(document.getElementById("people").value);
+  let tip = Number(document.getElementById("tip-custom").value);
 
-calculate.addEventListener("click", () => {
+  let tipPerPerson = (bill * (tip/100)) / people;
+  let totalPerPerson = tipPerPerson + (bill / people);
 
-  const bill = document.getElementById("bill").value;
-  const tip = document.getElementById("tip").value;
-  const people = document.getElementById("people").value;
-
-  if (bill === '' || tip === '' || people === '') {
-    alert('Please complete all fields');
+  if (isNaN(tipPerPerson) || !isFinite(tipPerPerson)) {
+    tipPerPerson = 0.00;
+    totalPerPerson = 0.00;
   }
 
-  let totalTip = bill / tip;
+  document.getElementById("display-tip").innerHTML = `$${tipPerPerson.toFixed(2)}`;
+  document.getElementById("display-total").innerHTML = `$${totalPerPerson.toFixed(2)}`;
 
-  tipPerPerson = totalTip / people;
-  totalPerPerson = bill / people + tipPerPerson;
+};
 
-  let displayTotal = document.getElementById("display-total");
-  let displayTip = document.getElementById("display-tip");
+const test = document.getElementById("test");
 
-  displayTotal.innerHTML = `$${totalPerPerson.toFixed(2)}`;
-  displayTip.innerHTML = `$${tipPerPerson.toFixed(2)}`;
-
+test.addEventListener("click", e => {
+  if (e.target.tagName === "BUTTON") {
+    let removeActiveState = document.querySelectorAll(".btn--active");
+    for (let i = 0; i < removeActiveState.length; i++) {
+      removeActiveState[i].classList.remove("btn--active");
+    }
+    e.target.className = "btn btn--active";
+  }
 });
+
+function setTip(tip) {
+  console.log(tip)
+}

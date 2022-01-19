@@ -1,3 +1,7 @@
+/* =================================================
+  base styles
+==================================================== */
+
 * {
   box-sizing: border-box;
   font-family: 'Space Mono', monospace;
@@ -19,11 +23,19 @@ main {
   transform: translate(-50%, -50%);
 }
 
+/* =================================================
+  header
+==================================================== */
+
 .header {
   display: flex;
   justify-content: center;
   margin: 30px;
 }
+
+/* =================================================
+  form
+==================================================== */
 
 .form {
   width: 95vw;
@@ -48,15 +60,17 @@ label {
 
 input {
   border: none;
+  color: hsl(183, 100%, 15%);
   background-color: hsl(189, 41%, 97%);
   text-align: right;
   font-weight: bold;
   padding-right: 5px;
 }
 
-#tip {
+input[class="tip-input"] {
   text-align: center;
 }
+
 
 input[type="number"] {
   border: none;
@@ -66,9 +80,7 @@ input[type="number"] {
   font-size: 24px;
 }
 
-input[type="number"]:focus {
-  border: solid 1px red;
-}
+/* remove default input styles */
 
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
@@ -83,24 +95,12 @@ input[type=number] {
 }
 
 
-p {
-  color: hsl(186, 14%, 43%);
-  font-weight: bold;
-  margin-bottom: 0;
-}
-
-
-
-
-
 span {
   font-size: 24px;
   color: hsl(172, 67%, 45%);
   font-weight: bold;
   margin-right: 15px;
 }
-
-
 
 
 #bill:before {
@@ -125,8 +125,12 @@ span {
   border-radius: 5px;
   font-weight: bolder;
   font-size: 24px;
-  /* margin: 5px 2.5px 5px 2.5px; */
   margin: 5px;
+}
+
+.btn--active {
+  color: hsl(183, 100%, 15%);
+  background-color: hsl(172, 67%, 45%);
 }
 
 .btn-custom {
@@ -145,6 +149,8 @@ span {
 
 }
 
+
+
 .form__output {
   background-color: hsl(183, 100%, 15%);
   display: flex;
@@ -155,6 +161,13 @@ span {
   margin: 10px;
   padding: 10px;
 }
+
+p {
+  color: hsl(186, 14%, 43%);
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
 
 .form__textBox {
   display: flex;
@@ -194,7 +207,6 @@ span {
   .form {
     display: flex;
     flex-direction: row;
-    max-width: 880px;
     max-width: 815px;
   }
 
@@ -239,7 +251,6 @@ span {
 
   .form__output {
     min-width: 340px;
-
     justify-content: space-between;
   }
 
