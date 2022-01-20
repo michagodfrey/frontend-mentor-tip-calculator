@@ -24,13 +24,16 @@
       <form id="form" class="form" action="index.html" method="post">
         <fieldset>
           <div class="form__input">
-            <label for="bill">Bill</label>
-            <input id="bill" type="number">
+            <div class="label-container">
+              <label for="bill">Bill</label>
+              <span id="bill-zero" class="error-zero" style="display: none;">Can't be zero</span>
+            </div>
+            <input id="bill" class="bill" type="number" placeholder="0">
           </div>
 
           <div class="form__input">
-            <label for="tip">Select Tip % (only custom values atm)</label>
-            <div id="test" class="form__container">
+            <label for="tip">Select Tip %</label>
+            <div id="buttons" class="form__container">
               <button type="button" class="btn" onclick="setTip(5)">5%</button>
               <button type="button" class="btn" onclick="setTip(10)">10%</button>
               <button type="button" class="btn" onclick="setTip(15)">15%</button>
@@ -44,11 +47,12 @@
 
 
           <div class="form__input">
-            <label for="people">Number of People</label>
-            <input id="people" type="number" name="people">
+            <div class="label-container">
+              <label for="people">Number of People</label>
+              <span id="people-zero" class="error-zero" style="display: none;">Can't be zero<span>
+            </div>
+            <input id="people" class="people" type="number" name="people" placeholder="0">
           </div>
-
-            <!-- <img src="images/icon-person.svg" alt=""> -->
 
         </fieldset>
 
@@ -60,18 +64,17 @@
                 <p class="t1">Tip Amount</p>
                 <p class="t2">/ person</p>
               </div>
-              <span id="display-tip"></span>
+              <input id="display-tip" type="text" placeholder="$0.00" disabled>
             </div>
             <div class="form__textBox">
               <div class="text">
                 <p class="t1">Total</p>
                 <p class="t2">/ person</p>
               </div>
-              <span id="display-total"></span>
-              <!-- <input id="display-total" type="number" placeholder="0.00"> -->
+              <input id="display-total" type="text" placeholder="$0.00" disabled>
             </div>
             </div>
-            <button type="reset" class="btn__reset">RESET</button>
+            <button id="reset" type="reset" class="btn--deactive">RESET</button>
 
           </div>
 

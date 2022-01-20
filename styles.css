@@ -60,24 +60,77 @@ label {
 
 input {
   border: none;
-  color: hsl(183, 100%, 15%);
-  background-color: hsl(189, 41%, 97%);
   text-align: right;
   font-weight: bold;
   padding-right: 5px;
-}
 
-input[class="tip-input"] {
-  text-align: center;
+  position: relative;
 }
-
 
 input[type="number"] {
-  border: none;
+  color: hsl(183, 100%, 15%);
   border-radius: 5px;
   height: 45px;
   width: 100%;
   font-size: 24px;
+
+}
+
+input[type="number"]:focus {
+  outline: 2px solid hsl(172, 67%, 45%);
+}
+
+input[class="bill"] {
+  background: url("images/icon-dollar.svg");
+  background-repeat: no-repeat;
+  background-position: 10px 15px;
+  background-color: hsl(189, 41%, 97%);
+}
+
+input[class="people"] {
+  background: url("images/icon-person.svg");
+  background-repeat: no-repeat;
+  background-position: 10px 15px;
+  background-color: hsl(189, 41%, 97%);
+}
+
+input[type="number"]::placeholder {
+  color: hsl(185, 41%, 84%);
+}
+
+input[class="tip-input"] {
+  height: 45px;
+  width: 100%;
+  background-color: hsl(189, 41%, 97%);
+  padding: 0;
+  text-align: center;
+}
+
+input[class="tip-input"]::placeholder {
+  color: hsl(184, 14%, 56%);
+}
+
+input[type="text"] {
+  background-color: hsl(183, 100%, 15%);
+  font-size: 24px;
+  color: hsl(172, 67%, 45%);
+  font-weight: bold;
+  max-width: 150px;
+  margin-right: 15px;
+}
+
+input[type="text"]::placeholder {
+  color: hsl(172, 67%, 45%);
+}
+
+.error {
+  outline: 2px solid #e89999;
+}
+
+.error-zero {
+  color: #e89999;
+  font-weight: bold;
+  /* display: none; */
 }
 
 /* remove default input styles */
@@ -92,22 +145,6 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type=number] {
   -moz-appearance: textfield;
-}
-
-
-span {
-  font-size: 24px;
-  color: hsl(172, 67%, 45%);
-  font-weight: bold;
-  margin-right: 15px;
-}
-
-
-#bill:before {
-  position: absolute;
-  left: 10px;
-  width: 20px;
-  background: url("/images/icon-dollar.svg")
 }
 
 .form__container {
@@ -126,6 +163,11 @@ span {
   font-weight: bolder;
   font-size: 24px;
   margin: 5px;
+}
+
+.btn:hover {
+  color: hsl(183, 100%, 15%);
+  background-color: hsl(185, 41%, 84%);
 }
 
 .btn--active {
@@ -149,7 +191,11 @@ span {
 
 }
 
-
+.label-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 
 .form__output {
   background-color: hsl(183, 100%, 15%);
@@ -187,11 +233,11 @@ p {
 }
 
 .t2 {
-    margin-top: 0;
+  margin-top: 0;
 }
 
 
-.btn__reset {
+.btn--reset {
   width: 90%;
   height: 45px;
   margin: 15px auto;
@@ -201,6 +247,23 @@ p {
   font-weight: bold;
   color: hsl(183, 100%, 15%);
   font-size: 24px;
+}
+
+.btn--reset:hover {
+  background-color: hsl(185, 41%, 84%);
+}
+
+.btn--deactive {
+  width: 90%;
+  height: 45px;
+  margin: 15px auto;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  color: hsl(183, 100%, 15%);
+  font-size: 24px;
+  background-color: hsl(186, 14%, 43%);
+  opacity: .4;
 }
 
 @media (min-width: 992px) {
@@ -224,7 +287,6 @@ p {
   .btn {
     height: 50px;
     width: 120px;
-    /* margin: 7.5px; */
   }
 
   .btn-custom {
@@ -239,9 +301,9 @@ p {
     margin: 7.5px;
   }
 
-  span {
+  input[type="text"] {
     font-size: 36px;
-
+    max-width: 180px;
   }
 
 .form__input {
@@ -252,12 +314,6 @@ p {
   .form__output {
     min-width: 340px;
     justify-content: space-between;
-  }
-
-  .btn__reset {
-    width: 80%;
-    height: 35px;
-    font-size: 18px;
   }
 
 }
