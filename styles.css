@@ -10,24 +10,16 @@
 body {
   display: flex;
   justify-content: center;
-  height: 100vh;
-  position: relative;
+  flex-direction: column;
   background-color: hsl(185, 41%, 84%);
-}
-
-main {
   margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 
 /* =================================================
-  header
+  title
 ==================================================== */
 
-.header {
+.title {
   display: flex;
   justify-content: center;
   margin: 30px;
@@ -38,11 +30,14 @@ main {
 ==================================================== */
 
 .form {
-  width: 95vw;
-  max-width: 350px;
+  width: 100vw;
+  max-width: 375px;
   background-color: #fff;
   border-radius: 15px;
   padding: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 fieldset {
@@ -62,8 +57,7 @@ input {
   border: none;
   text-align: right;
   font-weight: bold;
-  padding-right: 5px;
-
+  padding-right: 10px;
   position: relative;
 }
 
@@ -98,25 +92,30 @@ input[type="number"]::placeholder {
   color: hsl(185, 41%, 84%);
 }
 
+input[type="number"]:hover {
+  cursor: pointer;
+}
+
 input[class="tip-input"] {
   height: 45px;
   width: 100%;
   background-color: hsl(189, 41%, 97%);
-  padding: 0;
-  text-align: center;
+  padding-right: 10px;
+
 }
 
 input[class="tip-input"]::placeholder {
   color: hsl(184, 14%, 56%);
+  text-align: center;
 }
 
 input[type="text"] {
   background-color: hsl(183, 100%, 15%);
-  font-size: 24px;
+  font-size: 32px;
   color: hsl(172, 67%, 45%);
   font-weight: bold;
-  max-width: 150px;
-  margin-right: 15px;
+  max-width: 195px;
+  padding-right: 10px;
 }
 
 input[type="text"]::placeholder {
@@ -150,13 +149,13 @@ input[type=number] {
 .form__container {
   display: flex;
   flex-flow: row wrap;
-  justify-content: center;
+  justify-content: space-around;
 }
 
 .btn {
   color: #fff;
   height: 45px;
-  width: 140px;
+  width: 145px;
   background-color: hsl(183, 100%, 15%);
   border: none;
   border-radius: 5px;
@@ -166,8 +165,7 @@ input[type=number] {
 }
 
 .btn:hover {
-  color: hsl(183, 100%, 15%);
-  background-color: hsl(185, 41%, 84%);
+  cursor: pointer;
 }
 
 .btn--active {
@@ -177,7 +175,7 @@ input[type=number] {
 
 .btn-custom {
   height: 45px;
-  width: 140px;
+  width: 145px;
   border: none;
   border-radius: 5px;
   font-weight: bolder;
@@ -195,6 +193,7 @@ input[type=number] {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin-bottom: 10px;
 }
 
 .form__output {
@@ -238,9 +237,9 @@ p {
 
 
 .btn--reset {
-  width: 90%;
+  width: 85%;
   height: 45px;
-  margin: 15px auto;
+  margin: 25px auto;
   background-color: hsl(172, 67%, 45%);
   border: none;
   border-radius: 5px;
@@ -250,13 +249,14 @@ p {
 }
 
 .btn--reset:hover {
+  cursor: pointer;
   background-color: hsl(185, 41%, 84%);
 }
 
 .btn--deactive {
-  width: 90%;
+  width: 85%;
   height: 45px;
-  margin: 15px auto;
+  margin: 25px auto;
   border: none;
   border-radius: 5px;
   font-weight: bold;
@@ -267,16 +267,37 @@ p {
 }
 
 @media (min-width: 992px) {
+
+  main {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .title {
+    position: absolute;
+    top: 18%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
   .form {
     display: flex;
     flex-direction: row;
-    max-width: 815px;
+    max-width: 915px;
   }
 
   fieldset {
-    padding: 20px;
-    max-width: 430px;
+    padding: 10px 30px;
+    max-width: 450px;
+  }
 
+  .form__output {
+    width: 80%;
+    justify-content: space-between;
+    padding: 20px;
   }
 
   .form__container {
@@ -287,6 +308,11 @@ p {
   .btn {
     height: 50px;
     width: 120px;
+  }
+
+  .btn:hover {
+    color: hsl(183, 100%, 15%);
+    background-color: hsl(185, 41%, 84%);
   }
 
   .btn-custom {
@@ -302,18 +328,12 @@ p {
   }
 
   input[type="text"] {
-    font-size: 36px;
-    max-width: 180px;
+    font-size: 40px;
+    max-width: 250px;
   }
 
 .form__input {
-    margin: 10px 0;
-  }
-
-
-  .form__output {
-    min-width: 340px;
-    justify-content: space-between;
+    margin: 20px 0;
   }
 
 }

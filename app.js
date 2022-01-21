@@ -1,13 +1,41 @@
+
+
 // tip calculation
 document.getElementById("form").onchange = function() {
+
+  // check if tip is entered with button or custom tip input
+  let tip;
+  let customTip = Number(document.getElementById("tip-custom").value);
+
+
+  let setTip = (tip) => {
+     return tip;
+  }
+
+  let selectTip = tip;
+
+  // remove .btn-active class if custom tip used and set tip to customTip
+  // else if selected tip is used set tip to that
+  if (customTip > 0) {
+    let removeActiveState = document.querySelectorAll(".btn--active");
+    for (let i = 0; i < removeActiveState.length; i++) {
+      removeActiveState[i].classList.remove("btn--active");
+    }
+    tip = customTip;
+    selectTip = 0;
+  } else if (selectTip > 0) {
+    tip = selectTip;
+  }
+
+  // bill and people input variables
   let bill = Number(document.getElementById("bill").value);
   let people = Number(document.getElementById("people").value);
-  let tip = Number(document.getElementById("tip-custom").value);
 
+  // do tip calculation
   let tipPerPerson = (bill * (tip/100)) / people;
   let totalPerPerson = tipPerPerson + (bill / people);
 
-  // display 'can't be zero' if bill or people input is zero
+  // display 'can't be zero' if bill input is zero
   if (bill === 0) {
     document.getElementById("bill").classList.add("error");
     document.getElementById("bill-zero").style.display = "flex";
@@ -16,6 +44,7 @@ document.getElementById("form").onchange = function() {
     document.getElementById("bill-zero").style.display = "none";
   }
 
+  // the same as above except for the people input
   if (people === 0) {
     document.getElementById("people").classList.add("error");
     document.getElementById("people-zero").style.display = "flex";
@@ -33,15 +62,7 @@ document.getElementById("form").onchange = function() {
     document.getElementById("reset").classList.add("btn--reset");
   }
 
-  // remove .btn-active class if custom tip used
-  if (tip > 0) {
-    let removeActiveState = document.querySelectorAll(".btn--active");
-    for (let i = 0; i < removeActiveState.length; i++) {
-      removeActiveState[i].classList.remove("btn--active");
-    }
-  }
-
-  // prevent the output from displaying null and infinity
+  // initialize output values to 0.00 prevent the output from displaying null and infinity
   if (isNaN(tipPerPerson) || !isFinite(tipPerPerson)) {
     tipPerPerson = 0.00;
     totalPerPerson = 0.00;
@@ -78,7 +99,3 @@ document.getElementById("reset").addEventListener("click", () => {
   document.getElementById("reset").classList.remove("btn--reset");
   document.getElementById("reset").classList.add("btn--deactive");
 });
-
-function setTip(tip) {
-  console.log(tip)
-}

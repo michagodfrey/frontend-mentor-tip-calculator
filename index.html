@@ -13,14 +13,13 @@
 </head>
 <body>
 
+  <div class="title">
+    <!-- <h1>Tip Calculator</h1> -->
+    <img src="images/logo.svg" alt="">
+  </div>
+
   <main>
 
-    <div class="header">
-      <!-- <h1>Tip Calculator</h1> -->
-      <img src="images/logo.svg" alt="">
-    </div>
-
-    <!-- <div class="calc"> -->
       <form id="form" class="form" action="index.html" method="post">
         <fieldset>
           <div class="form__input">
@@ -32,7 +31,9 @@
           </div>
 
           <div class="form__input">
-            <label for="tip">Select Tip %</label>
+            <div class="label-container">
+              <label for="tip">Select Tip %</label>
+            </div>
             <div id="buttons" class="form__container">
               <button type="button" class="btn" onclick="setTip(5)">5%</button>
               <button type="button" class="btn" onclick="setTip(10)">10%</button>
@@ -78,12 +79,7 @@
 
           </div>
 
-
-
-
       </form>
-    <!-- </div> -->
-
 
   </main>
 
