@@ -6,7 +6,7 @@ document.getElementById("form").oninput = function() {
   let customTip = Number(document.getElementById("tip-custom").value);
 
   // if custom tip input used, use that, otherwise use select tip if already selected
-  if (customTip >= 0) {
+  if (customTip > 0) {
     let removeActiveState = document.querySelectorAll(".tip-btn--active");
     for (let i = 0; i < removeActiveState.length; i++) {
       removeActiveState[i].classList.remove("tip-btn--active");
