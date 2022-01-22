@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-  <!-- <link rel="stylesheet" href="normalize.css"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="stylesheet" href="normalize.css">
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,61 +22,61 @@
 
       <form id="form" class="form" action="index.html" method="post">
         <fieldset>
-          <div class="form__input">
-            <div class="label-container">
+          <div class="input-box">
+            <div class="input-box__label">
               <label for="bill">Bill</label>
-              <span id="bill-zero" class="error-zero" style="display: none;">Can't be zero</span>
+              <span id="bill-zero" class="input-box__error-msg" style="display: none;">Can't be zero</span>
             </div>
-            <input id="bill" class="bill" type="number" placeholder="0">
+            <input id="bill" class="input-box__bill" type="number" placeholder="0">
           </div>
 
-          <div class="form__input">
-            <div class="label-container">
+          <div class="input-box">
+            <input id="tip-select" type="hidden" value="">
+            <div class="input-box__label">
               <label for="tip">Select Tip %</label>
             </div>
-            <div id="buttons" class="form__container">
-              <button type="button" class="btn" onclick="setTip(5)">5%</button>
-              <button type="button" class="btn" onclick="setTip(10)">10%</button>
-              <button type="button" class="btn" onclick="setTip(15)">15%</button>
-              <button type="button" class="btn" onclick="setTip(25)">25%</button>
-              <button type="button" class="btn" onclick="setTip(50)">50%</button>
-              <div class="btn-custom">
-                <input id="tip-custom" class="tip-input" type="number" placeholder="Custom">
+            <div id="buttons" class="input-box__tip-btn-box">
+              <button type="button" class="tip-btn" value="5">5%</button>
+              <button type="button" class="tip-btn" value="10">10%</button>
+              <button type="button" class="tip-btn" value="15">15%</button>
+              <button type="button" class="tip-btn" value="25">25%</button>
+              <button type="button" class="tip-btn" value="50">50%</button>
+              <div class="tip-custom">
+                <input id="tip-custom" class="tip-custom__input" type="number" placeholder="Custom">
               </div>
             </div>
           </div>
 
 
-          <div class="form__input">
-            <div class="label-container">
+          <div class="input-box">
+            <div class="input-box__label">
               <label for="people">Number of People</label>
-              <span id="people-zero" class="error-zero" style="display: none;">Can't be zero<span>
+              <span id="people-zero" class="input-box__error-msg" style="display: none;">Can't be zero<span>
             </div>
-            <input id="people" class="people" type="number" name="people" placeholder="0">
+            <input id="people" class="input-box__people" type="number" name="people" placeholder="0">
           </div>
 
         </fieldset>
 
-        <div class="form__output">
+        <div class="output-block">
           <!-- having another container her helps with the layout -->
           <div>
-            <div class="form__textBox">
-              <div class="text">
-                <p class="t1">Tip Amount</p>
-                <p class="t2">/ person</p>
+            <div class="output">
+              <div class="output__textbox">
+                <p class="output__text--label">Tip Amount</p>
+                <p class="output__text--sublabel">/ person</p>
               </div>
               <input id="display-tip" type="text" placeholder="$0.00" disabled>
             </div>
-            <div class="form__textBox">
-              <div class="text">
-                <p class="t1">Total</p>
-                <p class="t2">/ person</p>
+            <div class="output">
+              <div class="output__textbox">
+                <p class="output__text--label">Total</p>
+                <p class="output__text--sublabel">/ person</p>
               </div>
               <input id="display-total" type="text" placeholder="$0.00" disabled>
             </div>
             </div>
-            <button id="reset" type="reset" class="btn--deactive">RESET</button>
-
+            <button id="reset" type="reset" class="btn-deactive">RESET</button>
           </div>
 
       </form>

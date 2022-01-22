@@ -40,12 +40,94 @@ body {
   margin-right: auto;
 }
 
+/* =================================================
+  input block
+==================================================== */
+
 fieldset {
   border: none;
 }
 
-.form__input {
+.input-box {
   margin: 15px 0;
+}
+
+.input-box__label {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.input-box__tip-btn-box {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+/* error styles applied when bill and people values are zero */
+
+.input-box__error-msg {
+  color: #e89999;
+  font-weight: bold;
+}
+
+.error {
+  outline: 2px solid #e89999;
+}
+
+/* tip buttons */
+
+.tip-btn {
+  color: #fff;
+  height: 45px;
+  width: 145px;
+  background-color: hsl(183, 100%, 15%);
+  border: none;
+  border-radius: 5px;
+  font-weight: bolder;
+  font-size: 24px;
+  margin: 5px;
+}
+
+.tip-btn:hover {
+  cursor: pointer;
+  color: hsl(183, 100%, 15%);
+  background-color: hsl(172, 67%, 45%);
+}
+
+.tip-btn--active {
+  color: hsl(183, 100%, 15%);
+  background-color: hsl(172, 67%, 45%);
+}
+
+.tip-custom {
+  height: 45px;
+  width: 145px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bolder;
+  margin: 5px;
+  padding: 0;
+}
+
+.tip-custom__input {
+  height: 45px;
+  width: 140px;
+}
+
+/* label and input styles */
+
+/* remove default input styles Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* remove default input styles Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }
 
 label {
@@ -67,46 +149,83 @@ input[type="number"] {
   height: 45px;
   width: 100%;
   font-size: 24px;
-
-}
-
-input[type="number"]:focus {
-  outline: 2px solid hsl(172, 67%, 45%);
-}
-
-input[class="bill"] {
-  background: url("images/icon-dollar.svg");
-  background-repeat: no-repeat;
-  background-position: 10px 15px;
-  background-color: hsl(189, 41%, 97%);
-}
-
-input[class="people"] {
-  background: url("images/icon-person.svg");
-  background-repeat: no-repeat;
-  background-position: 10px 15px;
-  background-color: hsl(189, 41%, 97%);
 }
 
 input[type="number"]::placeholder {
   color: hsl(185, 41%, 84%);
 }
 
+input[type="number"]:focus {
+  outline: 2px solid hsl(172, 67%, 45%);
+}
+
 input[type="number"]:hover {
   cursor: pointer;
 }
 
-input[class="tip-input"] {
+input[class="input-box__bill"] {
+  background: url("images/icon-dollar.svg");
+  background-repeat: no-repeat;
+  background-position: 10px 15px;
+  background-color: hsl(189, 41%, 97%);
+}
+
+input[class="input-box__people"] {
+  background: url("images/icon-person.svg");
+  background-repeat: no-repeat;
+  background-position: 10px 15px;
+  background-color: hsl(189, 41%, 97%);
+}
+
+input[class="input-box__custom-tip"] {
   height: 45px;
   width: 100%;
   background-color: hsl(189, 41%, 97%);
-  padding-right: 10px;
-
 }
 
-input[class="tip-input"]::placeholder {
+input[class="input-box__custom-tip"]::placeholder {
   color: hsl(184, 14%, 56%);
   text-align: center;
+  padding-left: 10px;
+}
+
+/* =================================================
+  results block
+==================================================== */
+
+.output-block {
+  background-color: hsl(183, 100%, 15%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: none;
+  border-radius: 5%;
+  margin: 10px;
+  padding: 10px;
+}
+
+.output {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.output__textbox {
+  margin: 15px 0 0 15px;
+  transform: translateY(-15%);
+}
+
+.output__text--label {
+  color: hsl(0, 0%, 100%);
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.output__text--sublabel {
+  color: hsl(186, 14%, 43%);
+  font-weight: bold;
+  margin-top: 0;
 }
 
 input[type="text"] {
@@ -122,121 +241,11 @@ input[type="text"]::placeholder {
   color: hsl(172, 67%, 45%);
 }
 
-.error {
-  outline: 2px solid #e89999;
-}
+/* =================================================
+  reset button
+==================================================== */
 
-.error-zero {
-  color: #e89999;
-  font-weight: bold;
-  /* display: none; */
-}
-
-/* remove default input styles */
-
-/* Chrome, Safari, Edge, Opera */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-/* Firefox */
-input[type=number] {
-  -moz-appearance: textfield;
-}
-
-.form__container {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
-}
-
-.btn {
-  color: #fff;
-  height: 45px;
-  width: 145px;
-  background-color: hsl(183, 100%, 15%);
-  border: none;
-  border-radius: 5px;
-  font-weight: bolder;
-  font-size: 24px;
-  margin: 5px;
-}
-
-.btn:hover {
-  cursor: pointer;
-}
-
-.btn--active {
-  color: hsl(183, 100%, 15%);
-  background-color: hsl(172, 67%, 45%);
-}
-
-.btn-custom {
-  height: 45px;
-  width: 145px;
-  border: none;
-  border-radius: 5px;
-  font-weight: bolder;
-  margin: 5px;
-  padding: 0;
-}
-
-.tip-input {
-  height: 45px;
-  width: 140px;
-
-}
-
-.label-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-bottom: 10px;
-}
-
-.form__output {
-  background-color: hsl(183, 100%, 15%);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  border: none;
-  border-radius: 5%;
-  margin: 10px;
-  padding: 10px;
-}
-
-p {
-  color: hsl(186, 14%, 43%);
-  font-weight: bold;
-  margin-bottom: 0;
-}
-
-
-.form__textBox {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.text {
-  margin: 15px 0 0 15px;
-  transform: translateY(-15%);
-}
-
-.t1 {
-  color: hsl(0, 0%, 100%);
-
-}
-
-.t2 {
-  margin-top: 0;
-}
-
-
-.btn--reset {
+.btn-reset {
   width: 85%;
   height: 45px;
   margin: 25px auto;
@@ -248,12 +257,12 @@ p {
   font-size: 24px;
 }
 
-.btn--reset:hover {
+.btn-reset:hover {
   cursor: pointer;
   background-color: hsl(185, 41%, 84%);
 }
 
-.btn--deactive {
+.btn-deactive {
   width: 85%;
   height: 45px;
   margin: 25px auto;
@@ -265,6 +274,10 @@ p {
   background-color: hsl(186, 14%, 43%);
   opacity: .4;
 }
+
+/* =================================================
+  display for desktop screens
+==================================================== */
 
 @media (min-width: 992px) {
 
@@ -289,51 +302,49 @@ p {
     max-width: 915px;
   }
 
+  /* input block */
+
   fieldset {
     padding: 10px 30px;
     max-width: 450px;
   }
 
-  .form__output {
+  .input-box {
+    margin: 20px 0;
+  }
+
+  /* tip buttons */
+
+  .tip-btn {
+    height: 50px;
+    width: 120px;
+  }
+
+  .tip-btn:hover {
+    color: hsl(183, 100%, 15%);
+    background-color: hsl(185, 41%, 84%);
+  }
+
+  .tip-custom {
+    height: 50px;
+    width: 120px;
+  }
+
+  .tip-custom__input {
+    margin-top: 2.5px;
+  }
+
+  /* output block */
+
+  .output-block {
     width: 80%;
     justify-content: space-between;
     padding: 20px;
   }
 
-  .form__container {
-    flex-direction: row;
-    justify-content: flex-start;
-  }
-
-  .btn {
-    height: 50px;
-    width: 120px;
-  }
-
-  .btn:hover {
-    color: hsl(183, 100%, 15%);
-    background-color: hsl(185, 41%, 84%);
-  }
-
-  .btn-custom {
-    height: 50px;
-    width: 120px;
-    margin: 0;
-  }
-
-  .tip-input {
-    height: 50px;
-    width: 120px;
-    margin: 7.5px;
-  }
-
   input[type="text"] {
     font-size: 40px;
     max-width: 250px;
-  }
-
-.form__input {
-    margin: 20px 0;
   }
 
 }
