@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="normalize.css">
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
@@ -13,75 +13,77 @@
 </head>
 <body>
 
-  <div class="title">
-    <!-- <h1>Tip Calculator</h1> -->
-    <img src="images/logo.svg" alt="">
-  </div>
+  <header>
+    <h1>Tip Calculator</h1>
+  </header>
 
   <main>
+    <form id="form" class="form" action="index.html" method="post">
 
-      <form id="form" class="form" action="index.html" method="post">
-        <fieldset>
-          <div class="input-box">
-            <div class="input-box__label">
-              <label for="bill">Bill</label>
-              <span id="bill-zero" class="input-box__error-msg" style="display: none;">Can't be zero</span>
-            </div>
-            <input id="bill" class="input-box__bill" type="number" placeholder="0">
+      <fieldset>
+        <div class="input-box">
+          <div class="input-box__label">
+            <label for="bill">Bill</label>
+            <span id="bill-zero" class="input-box__error-msg" style="display: none;">Can't be zero</span>
           </div>
+          <input id="bill" class="input-box__bill" type="number" placeholder="0">
+        </div>
 
-          <div class="input-box">
-            <input id="tip-select" type="hidden" value="">
-            <div class="input-box__label">
-              <label for="tip">Select Tip %</label>
-            </div>
-            <div id="buttons" class="input-box__tip-btn-box">
-              <button type="button" class="tip-btn" value="5">5%</button>
-              <button type="button" class="tip-btn" value="10">10%</button>
-              <button type="button" class="tip-btn" value="15">15%</button>
-              <button type="button" class="tip-btn" value="25">25%</button>
-              <button type="button" class="tip-btn" value="50">50%</button>
-              <div class="tip-custom">
-                <input id="tip-custom" class="tip-custom__input" type="number" placeholder="Custom">
-              </div>
+        <div class="input-box">
+          <input id="tip-select" type="hidden" value="">
+          <div class="input-box__label">
+            <label for="buttons">Select Tip %</label>
+          </div>
+          <div id="buttons" class="input-box__tip-btn-box">
+            <button type="button" class="tip-btn" value="5">5%</button>
+            <button type="button" class="tip-btn" value="10">10%</button>
+            <button type="button" class="tip-btn" value="15">15%</button>
+            <button type="button" class="tip-btn" value="25">25%</button>
+            <button type="button" class="tip-btn" value="50">50%</button>
+            <div class="tip-custom">
+              <input id="tip-custom" class="tip-custom__input" type="number" placeholder="Custom">
             </div>
           </div>
+        </div>
 
-
-          <div class="input-box">
-            <div class="input-box__label">
-              <label for="people">Number of People</label>
-              <span id="people-zero" class="input-box__error-msg" style="display: none;">Can't be zero<span>
-            </div>
-            <input id="people" class="input-box__people" type="number" name="people" placeholder="0">
+        <div class="input-box">
+          <div class="input-box__label">
+            <label for="people">Number of People</label>
+            <span id="people-zero" class="input-box__error-msg" style="display: none;">Can't be zero<span>
           </div>
+          <input id="people" class="input-box__people" type="number" name="people" placeholder="0">
+        </div>
+      </fieldset>
 
-        </fieldset>
-
-        <div class="output-block">
-          <!-- having another container her helps with the layout -->
-          <div>
-            <div class="output">
-              <div class="output__textbox">
-                <p class="output__text--label">Tip Amount</p>
-                <p class="output__text--sublabel">/ person</p>
-              </div>
-              <input id="display-tip" type="text" placeholder="$0.00" disabled>
+      <div class="output-block">
+        <div>
+          <div class="output">
+            <div class="output__textbox">
+              <p class="output__text--label">Tip Amount</p>
+              <p class="output__text--sublabel">/ person</p>
             </div>
-            <div class="output">
-              <div class="output__textbox">
-                <p class="output__text--label">Total</p>
-                <p class="output__text--sublabel">/ person</p>
-              </div>
-              <input id="display-total" type="text" placeholder="$0.00" disabled>
-            </div>
-            </div>
-            <button id="reset" type="reset" class="btn-deactive">RESET</button>
+            <input id="display-tip" type="text" placeholder="$0.00" disabled>
           </div>
+          <div class="output">
+            <div class="output__textbox">
+              <p class="output__text--label">Total</p>
+              <p class="output__text--sublabel">/ person</p>
+            </div>
+            <input id="display-total" type="text" placeholder="$0.00" disabled>
+          </div>
+          </div>
+          <button id="reset" type="reset" class="btn-deactive">RESET</button>
+        </div>
 
-      </form>
-
+    </form>
   </main>
+
+  <footer>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="https://michagodfrey.github.io/" target="_blank">Michael Godfrey</a>.
+    </div>
+  </footer>
 
 <script src="app.js"></script>
 </body>

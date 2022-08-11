@@ -15,14 +15,32 @@ body {
   margin: 0;
 }
 
-/* =================================================
-  title
-==================================================== */
+/* hide title to user but still visible to screen readers */
+h1 {
+  font-size: 0px;
+}
 
-.title {
-  display: flex;
-  justify-content: center;
-  margin: 30px;
+main {
+  position: relative;
+  margin-top: 150px;
+}
+
+/* Spli Tter title image */
+main::before {
+  background-image: url("images/logo.svg");
+  position: absolute;
+  content: '';
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 75px;
+  width: 100px;
+  transform: translateY(-150%);
+  left: calc(50% - 50px);
+}
+
+footer {
+  margin: 0 auto;
 }
 
 /* =================================================
@@ -151,10 +169,6 @@ input[type="number"] {
   font-size: 24px;
 }
 
-input[type="number"]::placeholder {
-  color: hsl(185, 41%, 84%);
-}
-
 input[type="number"]:focus {
   outline: 2px solid hsl(172, 67%, 45%);
 }
@@ -281,19 +295,13 @@ input[type="text"]::placeholder {
 
 @media (min-width: 992px) {
 
-  main {
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  body {
+    height: 100vh;
+    align-content: center;
   }
 
-  .title {
-    position: absolute;
-    top: 18%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  main {
+    margin: 0;
   }
 
   .form {
